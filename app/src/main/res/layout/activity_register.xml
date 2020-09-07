@@ -90,7 +90,8 @@
         android:id="@+id/et3"
         android:layout_width="335dp"
         android:layout_height="47dp"
-        android:background="@drawable/et_style" />
+        android:background="@drawable/et_style"
+        android:inputType="textEmailAddress"/>
 
     <Space
         android:layout_width="match_parent"
