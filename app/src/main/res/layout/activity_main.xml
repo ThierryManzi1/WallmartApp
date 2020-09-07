@@ -60,7 +60,8 @@
         android:id="@+id/password"
         android:layout_width="335dp"
         android:layout_height="47dp"
-        android:background="@drawable/et_style" />
+        android:background="@drawable/et_style"
+        android:inputType="textPassword"/>
 
     <TextView
         android:id="@+id/textView3"

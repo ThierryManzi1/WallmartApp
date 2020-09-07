@@ -23,19 +23,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun signIn(view:View){
-        var name=""
+        var useremail=""
         var exist=false
         var username:String =email.text.toString()
         var pass:String=password.text.toString()
-        for (i in users){
-            if(i.email.equals(username) && i.password.equals(pass))
-                exist=true
-            name=i.firstName.toString()
+        for (i in users) {
+            if (i.email.equals(username) && i.password.equals(pass)){
+                exist = true
+                useremail = i.email.toString()
+            }
+            if(useremail!=""){
+                break
+            }
+
 
         }
         if (exist) {
             val shppingIntent = Intent(this, Shopping_activity::class.java)
-            shppingIntent.putExtra("name",name)
+            shppingIntent.putExtra("name",useremail)
             startActivity(shppingIntent);
         }
         else

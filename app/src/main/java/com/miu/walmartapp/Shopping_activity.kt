@@ -14,7 +14,7 @@ class Shopping_activity : AppCompatActivity() {
         val intent = getIntent()
 
         val output = intent.getStringExtra("name")
-        userinfo.text= output
+        userinfo.text= "Welcome $output"
 
         val iv_click_me1 = findViewById(R.id.imageView1) as ImageView
         iv_click_me1.setOnClickListener{

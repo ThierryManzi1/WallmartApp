@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/userinfo"
-        android:layout_width="251dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
