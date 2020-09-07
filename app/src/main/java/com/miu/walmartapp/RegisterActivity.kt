@@ -15,26 +15,32 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
     }
 
-    fun createUser(view: View) {
+    fun createUser(view:View){
         var fName:String=et1.text.toString().trim()
         var lName:String=et2.text.toString().trim()
-        var email:String=et2.text.toString().trim()
+        var email:String=et3.text.toString().trim()
         var pass:String=et4.text.toString().trim()
 
-        if(fName.equals("") || lName.equals("") || email.equals("")||pass.equals("")){
-            Toast.makeText(this,"Please fill all the required fields", Toast.LENGTH_LONG).show()
-        }else{
-            var user:User= User(fName,lName,email, pass)
+        if(fName.equals("") || lName.equals("") || email.equals("") || pass.equals("")){
+            Toast.makeText(this, "Please fill all the fields!", Toast.LENGTH_LONG)
+                .show()
 
-            val userIntent = Intent()
-            userIntent.putExtra("userData",userIntent)
-            setResult(Activity.RESULT_OK,userIntent)
-
-            Toast.makeText(this, "Account is successfully created", Toast.LENGTH_LONG).show()
-            finish()
         }
 
+        else {
+            var userData:User= User(fName,lName,email,pass)
+
+            val userdataIntent = Intent()
+            userdataIntent.putExtra("userData", userData)
+            setResult(RESULT_OK, userdataIntent)
+
+            Toast.makeText(this, "Account is successfully created", Toast.LENGTH_LONG).show()
+
+            finish();
+        }
     }
+
+
 
 
 }

@@ -22,26 +22,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun signIn(view: View) {
-        var name:String=""
-        var exist = false
-        var username = email.text.toString()
-        var userpassword = password.text.toString()
-         for(i in users){
-             if(i.email.equals(username) && i.password.equals(password)){
-                 exist=true
-             }
-             name=i.email
-         }
-        if(exist){
-            val intent = Intent(this, Shopping_activity::class.java)
-            intent.putExtra("name", "Welcome $name")
-            startActivity(intent)
-        }else{
-            Toast.makeText(this,"invalid email and password", Toast.LENGTH_LONG).show()
-        }
-    }
+    fun signIn(view:View){
+        var name=""
+        var exist=false
+        var username:String =email.text.toString()
+        var pass:String=password.text.toString()
+        for (i in users){
+            if(i.email.equals(username) && i.password.equals(pass))
+                exist=true
+            name=i.firstName.toString()
 
+        }
+        if (exist) {
+            val shppingIntent = Intent(this, Shopping_activity::class.java)
+            shppingIntent.putExtra("name",name)
+            startActivity(shppingIntent);
+        }
+        else
+            Toast.makeText(this, "invalid UserName or Password", Toast.LENGTH_LONG).show()
+    }
     fun create(view: View) {
         val intent = Intent(this, RegisterActivity::class.java)
         startActivityForResult(intent,1)
@@ -56,25 +55,31 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun passwordReminder(view: View) {
+    fun passwordReminder(view: View){
         var passwordforgot:String=""
         var fName:String=""
-        if(email.text.toString().equals("")||email.text.toString()==null){
-            Toast.makeText(this,"Please enter a valid email address", Toast.LENGTH_SHORT).show()
-        }else{
-            var userEmail = email.text.toString()
-            for(i in users){
-                if(i.email.equals(userEmail)){
-                    passwordforgot = i.password
-                    fName= i.firstName
-                }
-                if(passwordforgot.trim().equals("")){
+        if (email.text.toString().trim().equals("") ||email.text.toString()==null ){
+            Toast.makeText(this, "Please Enter a valid email ", Toast.LENGTH_SHORT).show()
 
-                    Toast.makeText(this, "your account does not exit please create one ", Toast.LENGTH_LONG).show()
+        }
+        else{
+            var username= email.text.toString()
+            for(i in users) {
+                if (i.email.equals(username)) {
+                    passwordforgot = i.password
+                    fName=i.firstName
                 }
+            }
+            if(passwordforgot.trim().equals("")){
+
+                Toast.makeText(this, "Account does not exit please create one ", Toast.LENGTH_LONG).show()
+            }
+            else {
+                send(username, passwordforgot, fName)
             }
         }
     }
+
     private fun send(userEmail:String, password:String, fName:String){
         var message:String = "Hi $fName! your password is :$password "
 
