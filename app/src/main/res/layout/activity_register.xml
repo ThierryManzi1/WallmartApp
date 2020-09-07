@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/walmart_logo" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30sp"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account "
+        android:textColor="#000000"
+        android:textSize="30sp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30sp"/>
+    <TextView
+        android:id="@+id/required"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="*required field"
+        android:layout_marginLeft="50dp"
+        android:textColor="#000000"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10sp"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="First name*"
+        android:layout_marginLeft="50dp"/>
+
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="335dp"
+        android:layout_height="47dp"
+        android:background="@drawable/et_style" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20sp"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="Last name*"
+        android:layout_marginLeft="50dp"/>
+
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="335dp"
+        android:layout_height="47dp"
+        android:background="@drawable/et_style" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20sp"/>
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="Email address*"
+        android:layout_marginLeft="50dp"/>
+
+    <EditText
+        android:id="@+id/et3"
+        android:layout_width="335dp"
+        android:layout_height="47dp"
+        android:background="@drawable/et_style" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20sp"/>
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="Password*"
+        android:layout_marginLeft="50dp"/>
+
+    <EditText
+        android:id="@+id/et4"
+        android:layout_width="335dp"
+        android:layout_height="47dp"
+        android:background="@drawable/et_style" />
+
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40sp"/>
+
+    <Button
+        android:id="@+id/createuser"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:background="#0072CE"
+        android:text="Create Account"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:onClick="createUser"
+        />
+
+
+
+</LinearLayout>
